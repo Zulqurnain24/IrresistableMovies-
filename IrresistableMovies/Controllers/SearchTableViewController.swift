@@ -173,8 +173,9 @@ class SearchTableViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == Route.segueToMovieDetailController.rawValue {
-            guard let index = categorySegmentControl.selectedSegmentIndex as Int?,
-                let category = Category(rawValue: index) as Category?,
+            guard let searchText = searchController.searchBar.text as String?,
+                  let index = categorySegmentControl.selectedSegmentIndex as Int?,
+                  let category = searchText.isEmpty ? Category(rawValue: index) as Category? : Category.searchedMovies,
                 let movies = dataSource.selectedCategory(category: category) as [MovieInfo]? else { return }
             let destinationVC = segue.destination as! MovieDetailTableViewController
             destinationVC.movieId = movies[selectedRow].id
