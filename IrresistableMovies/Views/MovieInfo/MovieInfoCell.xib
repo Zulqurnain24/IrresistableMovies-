@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MovieInfoCell" rowHeight="182" id="N4D-6M-VBv" customClass="MovieInfoCell" customModule="IrresistableMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="182"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N4D-6M-VBv" id="I34-V5-sIs">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="181.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="OEx-8I-lpw">
+                        <rect key="frame" x="0.0" y="10" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="MkF-y7-OLl"/>
+                            <constraint firstAttribute="width" constant="100" id="T0D-mg-77E"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="ZNn-zF-cXt"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="xnS-35-hHK"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jgl-n5-v0U">
+                        <rect key="frame" x="115" y="5" width="200" height="171.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJd-kJ-F2r">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="52.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aw6-Z2-QjR">
+                                <rect key="frame" x="0.0" y="56.5" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="W9h-3W-79m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vote Count" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFr-Ro-zdj">
+                                <rect key="frame" x="0.0" y="81.5" width="200" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="Bbw-1s-Y5s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hP-BT-n7m">
+                                <rect key="frame" x="0.0" y="110.5" width="200" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="sTu-7E-hRF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="tintColor" red="0.29528087377548218" green="0.65102511644363403" blue="0.18408119678497314" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jgl-n5-v0U" firstAttribute="leading" secondItem="OEx-8I-lpw" secondAttribute="trailing" constant="15" id="0YK-u2-YWD"/>
+                    <constraint firstAttribute="bottom" secondItem="jgl-n5-v0U" secondAttribute="bottom" constant="5" id="DWs-Yk-4OL"/>
+                    <constraint firstAttribute="trailing" secondItem="jgl-n5-v0U" secondAttribute="trailing" constant="5" id="Lzd-w8-7cq"/>
+                    <constraint firstItem="OEx-8I-lpw" firstAttribute="leading" secondItem="I34-V5-sIs" secondAttribute="leading" id="O0K-3Y-DS8"/>
+                    <constraint firstItem="jgl-n5-v0U" firstAttribute="top" secondItem="I34-V5-sIs" secondAttribute="top" constant="5" id="h3f-Za-7Bh"/>
+                    <constraint firstItem="OEx-8I-lpw" firstAttribute="top" secondItem="I34-V5-sIs" secondAttribute="top" constant="10" id="jpx-wv-Af5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.081372934980000006" green="0.65038050520000001" blue="0.094557486250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="tintColor" red="0.081372934980000006" green="0.65038050520000001" blue="0.094557486250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <accessibility key="accessibilityConfiguration" identifier="MovieInfoCell">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityIdentifier" value="MovieInfoCell"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="movieImageView" destination="OEx-8I-lpw" id="pdq-9a-bdM"/>
+                <outlet property="movieOverviewLabel" destination="3hP-BT-n7m" id="RjQ-t7-CVc"/>
+                <outlet property="moviePopularityLabel" destination="Aw6-Z2-QjR" id="LCl-Bm-2OR"/>
+                <outlet property="movieTitleLabel" destination="JJd-kJ-F2r" id="SQ6-wl-ySH"/>
+                <outlet property="movieVoteCountLabel" destination="NFr-Ro-zdj" id="M5r-Hh-IVG"/>
+            </connections>
+            <point key="canvasLocation" x="-55.072463768115945" y="178.79464285714286"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeHolder" width="636" height="520"/>
+    </resources>
+</document>

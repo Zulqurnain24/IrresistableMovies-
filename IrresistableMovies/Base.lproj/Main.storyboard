@@ -1,24 +1,234 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cr7-Wp-71j">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Splash Animation View Controller-->
+        <scene sceneID="Kb1-Gy-13j">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="cr7-Wp-71j" customClass="SplashAnimationViewController" customModule="IrresistableMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UG6-Yw-QFv"/>
+                        <viewControllerLayoutGuide type="bottom" id="T3g-x6-xIb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vwa-fV-5we">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i2B-36-6cE">
+                                <rect key="frame" x="0.0" y="214" width="272" height="134"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="2ZI-Lf-1Ue"/>
+                                    <constraint firstAttribute="width" constant="272" id="8TN-ae-ld7"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Irresistable Movies" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5S7-YC-si1">
+                                <rect key="frame" x="137" y="214" width="183" height="84.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="55u-OE-2y3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <accessibility key="accessibilityConfiguration" identifier="SplashAnimationView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="i2B-36-6cE" firstAttribute="leading" secondItem="e2t-cC-tnk" secondAttribute="leading" id="9YZ-Y5-X4g"/>
+                            <constraint firstItem="e2t-cC-tnk" firstAttribute="trailing" secondItem="i2B-36-6cE" secondAttribute="trailing" constant="48" id="B99-QV-sgp"/>
+                            <constraint firstItem="5S7-YC-si1" firstAttribute="centerY" secondItem="vwa-fV-5we" secondAttribute="centerY" constant="-27.75" id="CUj-0B-2Lr"/>
+                            <constraint firstItem="i2B-36-6cE" firstAttribute="top" secondItem="UG6-Yw-QFv" secondAttribute="bottom" constant="194" id="Eo9-Wc-diq"/>
+                            <constraint firstItem="5S7-YC-si1" firstAttribute="centerX" secondItem="vwa-fV-5we" secondAttribute="centerX" constant="68.5" id="Tvv-fd-IL7"/>
+                            <constraint firstItem="T3g-x6-xIb" firstAttribute="top" secondItem="i2B-36-6cE" secondAttribute="bottom" constant="220" id="hCW-Hv-5RC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e2t-cC-tnk"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityIdentifier" value="SplashAnimationViewController"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="animationView" destination="i2B-36-6cE" id="4K9-1m-fPA"/>
+                        <segue destination="cLP-bv-SaU" kind="show" identifier="segueToSearchViewController" id="lSV-53-eh8"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fhJ-NU-L2Z" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-11.25" y="99.295774647887328"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L87-G8-I1P">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cLP-bv-SaU" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5wf-Nc-gvd">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NwC-Ap-2Jk" kind="relationship" relationship="rootViewController" id="os1-CX-cGT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Osd-d6-2Tg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="99"/>
+        </scene>
+        <!--Irresistable Movies-->
+        <scene sceneID="tm1-ha-Kcl">
+            <objects>
+                <viewController id="NwC-Ap-2Jk" customClass="SearchTableViewController" customModule="IrresistableMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fwv-Pd-BRn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8h1-no-hFR">
+                                <rect key="frame" x="0.0" y="90" width="320" height="478"/>
+                                <color key="backgroundColor" red="0.081372934980000006" green="0.65038050520000001" blue="0.094557486250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.081372934980000006" green="0.65038050520000001" blue="0.094557486250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="AccessbilityIdentifier" value="SearchTableViewController"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="NwC-Ap-2Jk" id="W3f-k0-LT9"/>
+                                    <outlet property="prefetchDataSource" destination="NwC-Ap-2Jk" id="2Em-mb-hmD"/>
+                                </connections>
+                            </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="of8-qd-ikP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="bND-HU-TdS"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Top Rated"/>
+                                    <segment title="Popular"/>
+                                    <segment title="Upcoming"/>
+                                </segments>
+                                <color key="tintColor" red="0.081372934980000006" green="0.65038050520000001" blue="0.094557486250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="categorySegmentControlValueChanged:" destination="NwC-Ap-2Jk" eventType="valueChanged" id="Dm8-vU-gxD"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="SearchTableView">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="leading" secondItem="vEW-JO-ldB" secondAttribute="leading" id="70p-f4-Thp"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="trailing" secondItem="vEW-JO-ldB" secondAttribute="trailing" id="Cy7-Ik-3hZ"/>
+                            <constraint firstItem="of8-qd-ikP" firstAttribute="leading" secondItem="vEW-JO-ldB" secondAttribute="leading" id="Itd-8R-cJz"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="leading" secondItem="vEW-JO-ldB" secondAttribute="leading" id="YC7-lM-C9D"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="bottom" secondItem="vEW-JO-ldB" secondAttribute="bottom" id="YFJ-dE-bbj"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="trailing" secondItem="vEW-JO-ldB" secondAttribute="trailing" id="cRd-bp-hX3"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="bottom" secondItem="vEW-JO-ldB" secondAttribute="bottom" id="fQV-Sc-M0A"/>
+                            <constraint firstAttribute="bottom" secondItem="8h1-no-hFR" secondAttribute="bottom" id="hTf-Oh-hTM"/>
+                            <constraint firstItem="8h1-no-hFR" firstAttribute="top" secondItem="vEW-JO-ldB" secondAttribute="top" constant="26" id="i5M-ID-4D0"/>
+                            <constraint firstAttribute="bottom" secondItem="8h1-no-hFR" secondAttribute="bottom" id="mW3-Ci-0Gh"/>
+                            <constraint firstItem="of8-qd-ikP" firstAttribute="trailing" secondItem="vEW-JO-ldB" secondAttribute="trailing" id="oWu-9P-eFA"/>
+                            <constraint firstItem="of8-qd-ikP" firstAttribute="top" secondItem="vEW-JO-ldB" secondAttribute="top" id="w7A-Pg-xcV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vEW-JO-ldB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Irresistable Movies" id="aKR-zb-3Fv"/>
+                    <connections>
+                        <outlet property="categorySegmentControl" destination="of8-qd-ikP" id="hmv-Nw-mr9"/>
+                        <outlet property="tableView" destination="8h1-no-hFR" id="c9a-OQ-OPo"/>
+                        <segue destination="zp9-B9-uoT" kind="show" identifier="segueToMovieDetailController" id="QfF-5D-Ojh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="isF-2O-8gq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756.875" y="106.69014084507042"/>
+        </scene>
+        <!--Movie Detail-->
+        <scene sceneID="njY-hi-i80">
+            <objects>
+                <tableViewController title="Movie Detail" id="zp9-B9-uoT" customClass="MovieDetailTableViewController" customModule="IrresistableMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pbo-32-p7P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityIdentifier" value="MovieDetailTableViewController"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="dataSource" destination="zp9-B9-uoT" id="rzA-Qr-e1T"/>
+                            <outlet property="delegate" destination="zp9-B9-uoT" id="kIa-pp-500"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="8dj-ij-J3J" kind="show" identifier="segueToTrailerDetailController" id="f9W-cS-Aki"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfR-Gi-3qw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2636" y="107"/>
+        </scene>
+        <!--Movie Trailer-->
+        <scene sceneID="HFv-Wc-Jtx">
+            <objects>
+                <viewController title="Movie Trailer" id="8dj-ij-J3J" customClass="MovieTrailerController" customModule="IrresistableMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eUG-v0-fAH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NC8-jf-Vic">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration" identifier="MovieTrailerController">
+                            <bool key="isElement" value="YES"/>
+                        </accessibility>
+                        <constraints>
+                            <constraint firstItem="NC8-jf-Vic" firstAttribute="top" secondItem="eUG-v0-fAH" secondAttribute="top" id="0jD-dv-Hw5"/>
+                            <constraint firstItem="NC8-jf-Vic" firstAttribute="bottom" secondItem="Bgp-9i-thY" secondAttribute="bottom" id="Idb-dv-fpE"/>
+                            <constraint firstItem="NC8-jf-Vic" firstAttribute="leading" secondItem="Bgp-9i-thY" secondAttribute="leading" id="KZs-21-JKk"/>
+                            <constraint firstItem="NC8-jf-Vic" firstAttribute="trailing" secondItem="Bgp-9i-thY" secondAttribute="trailing" id="M7x-fF-5fr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bgp-9i-thY"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="AccessibilityIdentifier" value="MovieTrailerController"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="NC8-jf-Vic" id="JcF-sl-xJh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOV-GQ-XGC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3572" y="107"/>
         </scene>
     </scenes>
 </document>

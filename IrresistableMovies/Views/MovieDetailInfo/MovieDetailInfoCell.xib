@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="401" id="KGk-i7-Jjw" customClass="MovieDetailInfoCell" customModule="IrresistableMovies" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="401"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="400.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uk-2D-VTq">
+                        <rect key="frame" x="8" y="2" width="304" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="original_title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyi-y4-55g">
+                        <rect key="frame" x="8" y="22" width="304" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tagline" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oE-K8-T9m">
+                        <rect key="frame" x="8" y="40" width="304" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vote_average" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNM-SG-S1i">
+                        <rect key="frame" x="8" y="211" width="304" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="T70-1C-NCY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vote_count" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBc-ro-Z3r">
+                        <rect key="frame" x="8" y="233" width="304" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="wQU-LM-MhL"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="budget" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D94-ya-9hg">
+                        <rect key="frame" x="8" y="254" width="304" height="22"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reveue" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6df-aA-PaD">
+                        <rect key="frame" x="8" y="276" width="304" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="qgc-0v-1rm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rated" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fx8-Nd-Ene">
+                        <rect key="frame" x="8" y="298" width="304" height="59"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="overview" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJr-Sa-qmK">
+                        <rect key="frame" x="8" y="86" width="304" height="104"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="release_date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-Tl-s3E">
+                        <rect key="frame" x="8" y="193" width="304" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.29528087380000001" green="0.65102511640000005" blue="0.18408119680000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="ux5-Tl-s3E" firstAttribute="top" secondItem="0oE-K8-T9m" secondAttribute="bottom" constant="135" id="0ja-uo-rm4"/>
+                    <constraint firstAttribute="trailing" secondItem="6df-aA-PaD" secondAttribute="trailing" constant="8" id="2aA-aQ-e9c"/>
+                    <constraint firstItem="RNM-SG-S1i" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="3dY-Y5-MD4"/>
+                    <constraint firstAttribute="bottom" secondItem="fx8-Nd-Ene" secondAttribute="bottom" constant="43.5" id="5Ts-fY-hqD"/>
+                    <constraint firstAttribute="trailing" secondItem="RNM-SG-S1i" secondAttribute="trailing" constant="8" id="6KF-WM-57c"/>
+                    <constraint firstItem="Cyi-y4-55g" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="8Yq-cx-k0k"/>
+                    <constraint firstItem="D94-ya-9hg" firstAttribute="top" secondItem="RNM-SG-S1i" secondAttribute="bottom" constant="21" id="Ap9-2m-SP2"/>
+                    <constraint firstItem="0oE-K8-T9m" firstAttribute="top" secondItem="Cyi-y4-55g" secondAttribute="bottom" id="CFU-nk-4gi"/>
+                    <constraint firstAttribute="trailing" secondItem="WBc-ro-Z3r" secondAttribute="trailing" constant="8" id="FBk-cr-Z0c"/>
+                    <constraint firstItem="0oE-K8-T9m" firstAttribute="top" secondItem="0uk-2D-VTq" secondAttribute="bottom" constant="20" id="GAf-zn-jlJ"/>
+                    <constraint firstItem="ux5-Tl-s3E" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="Gt7-mt-5z1"/>
+                    <constraint firstItem="zJr-Sa-qmK" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="Hpy-fk-WZM"/>
+                    <constraint firstAttribute="trailing" secondItem="Cyi-y4-55g" secondAttribute="trailing" constant="8" id="I72-2w-ouT"/>
+                    <constraint firstItem="6df-aA-PaD" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="INQ-vL-0K3"/>
+                    <constraint firstAttribute="trailing" secondItem="D94-ya-9hg" secondAttribute="trailing" constant="8" id="JR8-xY-xPs"/>
+                    <constraint firstItem="RNM-SG-S1i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="JyB-8F-DqG"/>
+                    <constraint firstItem="D94-ya-9hg" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="OBm-Po-Kf4"/>
+                    <constraint firstItem="0uk-2D-VTq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="P6g-jF-YYg"/>
+                    <constraint firstAttribute="trailing" secondItem="zJr-Sa-qmK" secondAttribute="trailing" constant="8" id="Qsd-aB-pTW"/>
+                    <constraint firstItem="zJr-Sa-qmK" firstAttribute="top" secondItem="Cyi-y4-55g" secondAttribute="bottom" constant="46" id="Qxu-f3-LY9"/>
+                    <constraint firstAttribute="trailing" secondItem="ux5-Tl-s3E" secondAttribute="trailing" constant="8" id="TKg-yX-KVH"/>
+                    <constraint firstItem="zJr-Sa-qmK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Wha-4m-nBW"/>
+                    <constraint firstItem="WBc-ro-Z3r" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="XFZ-v3-aCN"/>
+                    <constraint firstItem="RNM-SG-S1i" firstAttribute="top" secondItem="ux5-Tl-s3E" secondAttribute="bottom" id="XiU-Kw-5hQ"/>
+                    <constraint firstAttribute="trailing" secondItem="0oE-K8-T9m" secondAttribute="trailing" constant="8" id="aJS-Yk-4y7"/>
+                    <constraint firstItem="WBc-ro-Z3r" firstAttribute="top" secondItem="RNM-SG-S1i" secondAttribute="bottom" id="bMm-UE-lj2"/>
+                    <constraint firstItem="fx8-Nd-Ene" firstAttribute="top" secondItem="6df-aA-PaD" secondAttribute="bottom" id="dOg-cp-f9v"/>
+                    <constraint firstItem="fx8-Nd-Ene" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="dgL-hI-u9K"/>
+                    <constraint firstItem="0uk-2D-VTq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="eh6-L5-Q8I"/>
+                    <constraint firstItem="ux5-Tl-s3E" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="fNc-p5-5eJ"/>
+                    <constraint firstItem="6df-aA-PaD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="iZA-xn-dII"/>
+                    <constraint firstItem="6df-aA-PaD" firstAttribute="top" secondItem="D94-ya-9hg" secondAttribute="bottom" id="jVd-22-VX5"/>
+                    <constraint firstItem="Cyi-y4-55g" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="l2O-x6-Woe"/>
+                    <constraint firstItem="WBc-ro-Z3r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="n6Y-sS-rUe"/>
+                    <constraint firstItem="RNM-SG-S1i" firstAttribute="top" secondItem="zJr-Sa-qmK" secondAttribute="bottom" constant="21" id="n75-kf-QLq"/>
+                    <constraint firstItem="D94-ya-9hg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="nwS-Rp-ETR"/>
+                    <constraint firstItem="6df-aA-PaD" firstAttribute="top" secondItem="WBc-ro-Z3r" secondAttribute="bottom" constant="21" id="rha-nc-PA9"/>
+                    <constraint firstItem="fx8-Nd-Ene" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="u8D-HT-o3P"/>
+                    <constraint firstAttribute="trailing" secondItem="0uk-2D-VTq" secondAttribute="trailing" constant="8" id="unJ-tM-ILm"/>
+                    <constraint firstItem="Cyi-y4-55g" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="xBK-S1-NKg"/>
+                    <constraint firstAttribute="trailing" secondItem="fx8-Nd-Ene" secondAttribute="trailing" constant="8" id="xHz-w4-pCV"/>
+                    <constraint firstItem="0oE-K8-T9m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="ywM-BQ-WjR"/>
+                    <constraint firstItem="0oE-K8-T9m" firstAttribute="width" secondItem="0uk-2D-VTq" secondAttribute="width" id="ywV-Pc-jG1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration" identifier="MovieDetailInfoCell">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="budgetLabel" destination="D94-ya-9hg" id="w3J-Jt-vB6"/>
+                <outlet property="originalTitleLabel" destination="Cyi-y4-55g" id="jMG-X8-F8B"/>
+                <outlet property="overviewLabel" destination="zJr-Sa-qmK" id="AO5-cW-GWX"/>
+                <outlet property="ratedLabel" destination="fx8-Nd-Ene" id="ysO-VU-IpR"/>
+                <outlet property="releaseDateLabel" destination="ux5-Tl-s3E" id="HEj-uH-oaP"/>
+                <outlet property="revenueLabel" destination="6df-aA-PaD" id="ZBB-Bd-SIN"/>
+                <outlet property="tagLineLabel" destination="0oE-K8-T9m" id="wau-v2-J0y"/>
+                <outlet property="titleLabel" destination="0uk-2D-VTq" id="To6-jc-AUk"/>
+                <outlet property="voteAverageLabel" destination="RNM-SG-S1i" id="ktr-cY-Hf3"/>
+                <outlet property="voteCountLabel" destination="WBc-ro-Z3r" id="2ed-gX-XfO"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="222.65625"/>
+        </tableViewCell>
+    </objects>
+</document>
