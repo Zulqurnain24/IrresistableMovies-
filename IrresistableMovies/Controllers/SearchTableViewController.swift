@@ -21,7 +21,7 @@ class SearchTableViewController: UIViewController {
     var dataSource = SearchResultsDataSource()
     let client = IrresistableMoviesAPIClient()
     var reachability = try! Reachability()
-    var selectedRow = 0
+    var selectedRow: Int?
     
     private struct Measurements {
         static let cellHeight: CGFloat = 170
@@ -189,9 +189,9 @@ class SearchTableViewController: UIViewController {
             guard let searchText = searchController.searchBar.text as String?,
                   let index = categorySegmentControl.selectedSegmentIndex as Int?,
                   let category = searchText.isEmpty ? Category(rawValue: index) as Category? : Category.searchedMovies,
-                let movies = dataSource.selectedCategory(category: category) as [MovieInfo]? else { return }
+                let movies = dataSource.selectedCategory(category: category) as [MovieInfo]?, let row = selectedRow as Int?, row < movies.count  else { return }
             let destinationVC = segue.destination as! MovieDetailTableViewController
-            destinationVC.movieId = movies[selectedRow].id
+            destinationVC.movieId = movies[row].id
         }
     }
 

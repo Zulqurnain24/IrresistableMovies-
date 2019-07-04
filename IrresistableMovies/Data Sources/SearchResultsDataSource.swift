@@ -49,7 +49,7 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
             self.searchedMovies.removeAll()
         }
     }
-    
+
     func update(with movies: [MovieInfo]?, selectedCategory: Category, _ completionHandler: (() -> Void)? = nil) -> SearchResultsDataSource? {
 
         guard let moviesArray = movies as [MovieInfo]? else { return nil }
@@ -59,37 +59,45 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
     
         switch self.selectedCategory {
         case .popularMovies:
-            popularMovies.append(contentsOf: moviesArray)
-            popularMovies = Array(Set<MovieInfo>(popularMovies))
-            if !popularMovies.isEmpty {
-                //save movies datasource to the persistent store
-                PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: popularMovies, completionHandler)
+            if let lastElement = moviesArray.last as MovieInfo?, !popularMovies.contains(lastElement) {
+                popularMovies.append(contentsOf: moviesArray)
+                popularMovies = Array(Set<MovieInfo>(popularMovies))
+                if !popularMovies.isEmpty {
+                    //save movies datasource to the persistent store
+                    PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: popularMovies, completionHandler)
+                }
             }
             return self
         case .topRatedMovies:
-            topRatedMovies.append(contentsOf: moviesArray)
-            topRatedMovies = Array(Set<MovieInfo>(topRatedMovies))
-            if !topRatedMovies.isEmpty {
-                //save movies datasource to the persistent store
-                PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: topRatedMovies, completionHandler)
+            if let lastElement = moviesArray.last as MovieInfo?, !topRatedMovies.contains(lastElement) {
+                topRatedMovies.append(contentsOf: moviesArray)
+                topRatedMovies = Array(Set<MovieInfo>(topRatedMovies))
+                if !topRatedMovies.isEmpty {
+                    //save movies datasource to the persistent store
+                    PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: topRatedMovies, completionHandler)
+                }
             }
             return self
         case .upcomingMovies:
-            upcomingMovies.append(contentsOf: moviesArray)
-            upcomingMovies = Array(Set<MovieInfo>(upcomingMovies))
-             if !upcomingMovies.isEmpty {
-                //save movies datasource to the persistent store
-                PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: upcomingMovies, completionHandler)
+            if let lastElement = moviesArray.last as MovieInfo?, !upcomingMovies.contains(lastElement) {
+                upcomingMovies.append(contentsOf: moviesArray)
+                upcomingMovies = Array(Set<MovieInfo>(upcomingMovies))
+                 if !upcomingMovies.isEmpty {
+                    //save movies datasource to the persistent store
+                    PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: upcomingMovies, completionHandler)
+                }
             }
             return self
         case .searchedMovies:
-            if completionHandler != nil {
-                completionHandler!()
-            }
-            
-            searchedMovies.append(contentsOf: moviesArray)
-            searchedMovies = Array(Set<MovieInfo>(searchedMovies))
+            if let lastElement = moviesArray.last as MovieInfo?, !searchedMovies.contains(lastElement) {
+                if completionHandler != nil {
+                    completionHandler!()
+                }
+                
+                searchedMovies.append(contentsOf: moviesArray)
+                searchedMovies = Array(Set<MovieInfo>(searchedMovies))
 
+            }
             return self
         }
     }
