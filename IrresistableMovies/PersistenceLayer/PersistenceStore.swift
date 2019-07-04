@@ -25,7 +25,7 @@ class PersistenceStore {
 
     func fetchMovieInfos(catagory: Category, withSearchSting: String? = nil) -> [MovieInfo] {
         var movieInfo = [MovieInfo]()
-        let request: NSFetchRequest<Movie> = Movie.fetchRequest()
+        let request: NSFetchRequest<Movie> = Movie.fetchRequest(withSearchSting)
         do {
             let movies = try managedObjectContext.fetch(request)
             movies.forEach({ movie in
@@ -33,7 +33,7 @@ class PersistenceStore {
             })
             
             guard withSearchSting == nil else {
-                return Array(Set<MovieInfo>(catagory == Category.searchedMovies ? movieInfo : movieInfo.filter({$0.category == catagory.rawValue}))).filter({ $0.title.contains(withSearchSting!)})
+                return Array(Set<MovieInfo>(catagory == Category.searchedMovies ? movieInfo : movieInfo.filter({$0.category == catagory.rawValue && $0.title.contains(withSearchSting!)})))
             }
             
             return Array(Set<MovieInfo>(catagory == Category.searchedMovies ? movieInfo : movieInfo.filter({$0.category == catagory.rawValue})))
@@ -55,9 +55,11 @@ class PersistenceStore {
             movieInfo.votes = Int32(movieInfoElement.votes)
             
             //save to the persistent store
-            self.managedObjectContext.saveChanges()
-            guard completionHandler != nil else { return }
-            completionHandler!()
+            self.managedObjectContext.perform({
+                self.managedObjectContext.saveChanges()
+                guard completionHandler != nil else { return }
+                completionHandler!()
+            } )
         })
     }
     
@@ -65,13 +67,15 @@ class PersistenceStore {
         //save to the persistent store
         let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Movie")
         let request = NSBatchDeleteRequest(fetchRequest: fetch)
-        do {
-            try self.managedObjectContext.execute(request)
-            guard completionHandler != nil else { return }
-            completionHandler!()
-        } catch let error {
-            print("error: \(error.localizedDescription)")
-            completionHandler!()
-        }
+         self.managedObjectContext.perform({
+            do {
+                try self.managedObjectContext.execute(request)
+                guard completionHandler != nil else { return }
+                completionHandler!()
+            } catch let error {
+                print("error: \(error.localizedDescription)")
+                completionHandler!()
+            }
+        })
     }
 }

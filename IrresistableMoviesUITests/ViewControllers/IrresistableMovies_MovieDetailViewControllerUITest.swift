@@ -29,12 +29,14 @@ class IrresistableMovies_MovieDetailViewControllerUITest: XCTestCase {
     // MARK: - Tests
     
     //swipe the table
-    func testTapOnMovieCell() {
+    func testGoToDetailView() {
 
         // Make sure we're displaying onboarding
         XCTAssertTrue(app.exists)
-        let movieInfoCell = self.app.otherElements.matching(identifier: "MovieInfoCell").element(boundBy: 0)
-        movieInfoCell.tap()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let movieInfoCell = self.app.otherElements.matching(identifier: "MovieInfoCell").element(boundBy: 0)
+            movieInfoCell.tap()
+        }
 
     }
 
@@ -43,9 +45,22 @@ class IrresistableMovies_MovieDetailViewControllerUITest: XCTestCase {
 
         // Make sure we're displaying onboarding
         XCTAssertTrue(self.app.exists)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            let weblinkCell = self.app.otherElements.matching(identifier: "WeblinkCell").element(boundBy: 0)
+            weblinkCell.tap()
+        }
         
-        let weblinkCell = self.app.otherElements.matching(identifier: "WeblinkCell").element(boundBy: 0)
-        weblinkCell.tap()
+    }
+    
+    //tap on home page link cell
+    func testTapOnTrailerLinkCell() {
+        
+        // Make sure we're displaying onboarding
+        XCTAssertTrue(self.app.exists)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5) {
+            let TrailerCell = self.app.otherElements.matching(identifier: "TrailerCell").element(boundBy: 0)
+            TrailerCell.tap()
+        }
         
     }
 }

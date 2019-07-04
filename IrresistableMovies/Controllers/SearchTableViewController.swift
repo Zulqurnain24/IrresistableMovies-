@@ -33,8 +33,10 @@ class SearchTableViewController: UIViewController {
         searchController.searchBar.accessibilityIdentifier = "searchBar"
         tableView.accessibilityIdentifier = "SearchTableView"
         searchController.searchBar.delegate = self
-        self.loadingAnimationView.isHidden = false
-        self.loadingAnimationView.startAnimating()
+        DispatchQueue.main.async {
+            self.loadingAnimationView.isHidden = false
+            self.loadingAnimationView.startAnimating()
+        }
         updateCoreDataRecords({
             DispatchQueue.main.async {
                 self.loadingAnimationView.isHidden = true
@@ -123,8 +125,10 @@ class SearchTableViewController: UIViewController {
     }
     
     func reloadTableView(movies: [MovieInfo], category: Category) {
-        self.loadingAnimationView.isHidden = false
-        self.loadingAnimationView.startAnimating()
+        DispatchQueue.main.async {
+            self.loadingAnimationView.isHidden = false
+            self.loadingAnimationView.startAnimating()
+        }
         self.tableView.dataSource = self.dataSource.update(with: movies, selectedCategory: category, {
             DispatchQueue.main.async {
                 self.loadingAnimationView.isHidden = true
@@ -205,6 +209,7 @@ extension SearchTableViewController: UISearchBarDelegate {
    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text as String?, !searchText.isEmpty else { return }
+        dataSource.clearSearchDatasource()
         guard reachability.connection != .unavailable else {
             if let movies = PersistenceStore.shared.fetchMovieInfos(catagory: Category.searchedMovies, withSearchSting: searchBar.text) as [MovieInfo]? {
                 DispatchQueue.main.async {
@@ -213,10 +218,11 @@ extension SearchTableViewController: UISearchBarDelegate {
                 }
             }
             return }
-        dataSource.clearSearchDatasource()
         client.fetchMovies(category: Category.searchedMovies, searchTerm:  UtilityFunctions.shared.performPercentEncoding(originalString: searchBar.text ?? "")) { movies, error in
-            self.loadingAnimationView.isHidden = false
-            self.loadingAnimationView.startAnimating()
+            DispatchQueue.main.async {
+                self.loadingAnimationView.isHidden = false
+                self.loadingAnimationView.startAnimating()
+            }
             self.tableView.dataSource = self.dataSource.update(with: movies, selectedCategory: Category.searchedMovies, {
                 DispatchQueue.main.async {
                     self.loadingAnimationView.isHidden = true
@@ -234,12 +240,6 @@ extension SearchTableViewController: UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         guard reachability.connection != .unavailable else {
-            if let movies = PersistenceStore.shared.fetchMovieInfos(catagory: Category.searchedMovies, withSearchSting: searchController.searchBar.text) as [MovieInfo]? {
-                DispatchQueue.main.async {
-                    self.loadingAnimationView.isHidden = true
-                    self.reloadTableView(movies: movies, category: Category.searchedMovies)
-                }
-            }
             return }
         dataSource.clearSearchDatasource()
         client.fetchMovies(category: Category.searchedMovies, searchTerm: searchController.searchBar.text) { movies, error in

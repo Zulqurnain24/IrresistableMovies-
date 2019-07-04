@@ -10,8 +10,6 @@ import UIKit
 
 class LoadingAnimationView: UIImageView {
 
-    @IBOutlet weak var reelImageView: UIImageView!
-    
     var duration = 3.0
     
     override func awakeFromNib() {
@@ -26,14 +24,14 @@ class LoadingAnimationView: UIImageView {
             imgListArray.add(image)
         }
         
-        reelImageView.animationImages = imgListArray as? [UIImage];
-        reelImageView.animationDuration = duration
+        self.animationImages = imgListArray as? [UIImage];
+        self.animationDuration = duration
     }
-
+    
     func initiateAnimation( _ completionHandler: (() -> Void)? = nil) {
-        reelImageView.startAnimating()
+        self.startAnimating()
         DispatchQueue.main.asyncAfter(deadline: .now() + duration, execute: {
-            self.reelImageView.stopAnimating()
+            self.stopAnimating()
             guard completionHandler != nil else { return }
             completionHandler!()
         })

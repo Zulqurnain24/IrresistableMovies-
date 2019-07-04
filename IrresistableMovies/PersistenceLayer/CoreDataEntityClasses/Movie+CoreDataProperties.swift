@@ -13,7 +13,14 @@ import CoreData
 
 extension Movie {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Movie> {
+    @nonobjc public class func fetchRequest(_ searchString: String? = nil) -> NSFetchRequest<Movie> {
+        guard searchString == nil else {
+            let request = NSFetchRequest<Movie>(entityName: "Movie")
+            guard let key = searchString as String? else { return NSFetchRequest<Movie>() }
+            let predicate = NSPredicate(format: "title contains[c] %@", key)
+            request.predicate = predicate
+            return request
+        }
         return NSFetchRequest<Movie>(entityName: "Movie")
     }
 

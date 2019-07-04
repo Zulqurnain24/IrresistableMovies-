@@ -15,6 +15,7 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
     private var upcomingMovies = [MovieInfo]()
     private var searchedMovies = [MovieInfo]()
     private var selectedCategory = Category.searchedMovies
+    var reachability = try! Reachability()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedCategory(category: selectedCategory).count
@@ -44,8 +45,8 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
     }
 
     func clearSearchDatasource() {
-        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
-            self?.searchedMovies.removeAll()
+        DispatchQueue.global(qos: .userInitiated).async { [unowned self] in
+            self.searchedMovies.removeAll()
         }
     }
     
@@ -82,12 +83,15 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
             }
             return self
         case .searchedMovies:
-            
+
             if completionHandler != nil {
                 completionHandler!()
             }
             
             searchedMovies.append(contentsOf: moviesArray)
+            
+            guard reachability.connection != .unavailable else {
+                return self}
             
              if !upcomingMovies.isEmpty {
                 //save movies datasource to the persistent store

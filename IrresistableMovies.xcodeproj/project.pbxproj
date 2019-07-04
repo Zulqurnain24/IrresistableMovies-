@@ -81,6 +81,7 @@
 		66F5C4A922CD558A0041122B /* IrresistableMovies_TestPersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4A822CD558A0041122B /* IrresistableMovies_TestPersistenceStore.swift */; };
 		66F5C4AC22CD5A220041122B /* IrresistableMovies_TestMovieInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4AB22CD5A220041122B /* IrresistableMovies_TestMovieInfoCellViewModel.swift */; };
 		66F5C4AE22CD5A2F0041122B /* IrresistableMovies_TestMovieInfoDetailCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F5C4AD22CD5A2F0041122B /* IrresistableMovies_TestMovieInfoDetailCellViewModel.swift */; };
+		66FDF8F222CE2A15009AA6A4 /* IrresistableMovies_MovieTrailerViewControllerUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66FDF8F122CE2A15009AA6A4 /* IrresistableMovies_MovieTrailerViewControllerUITest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,7 @@
 		66F5C4A822CD558A0041122B /* IrresistableMovies_TestPersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrresistableMovies_TestPersistenceStore.swift; sourceTree = "<group>"; };
 		66F5C4AB22CD5A220041122B /* IrresistableMovies_TestMovieInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrresistableMovies_TestMovieInfoCellViewModel.swift; sourceTree = "<group>"; };
 		66F5C4AD22CD5A2F0041122B /* IrresistableMovies_TestMovieInfoDetailCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrresistableMovies_TestMovieInfoDetailCellViewModel.swift; sourceTree = "<group>"; };
+		66FDF8F122CE2A15009AA6A4 /* IrresistableMovies_MovieTrailerViewControllerUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IrresistableMovies_MovieTrailerViewControllerUITest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,6 +473,7 @@
 			children = (
 				66B9544322CCAA7700C7F47D /* IrresistableMovies_SearchViewControllerUITest.swift */,
 				66B9544622CCAA9800C7F47D /* IrresistableMovies_MovieDetailViewControllerUITest.swift */,
+				66FDF8F122CE2A15009AA6A4 /* IrresistableMovies_MovieTrailerViewControllerUITest.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				66B9544722CCAA9800C7F47D /* IrresistableMovies_MovieDetailViewControllerUITest.swift in Sources */,
 				66B9544422CCAA7700C7F47D /* IrresistableMovies_SearchViewControllerUITest.swift in Sources */,
 				6658CCAE22C77D000010619A /* IrresistableMoviesUITests.swift in Sources */,
+				66FDF8F222CE2A15009AA6A4 /* IrresistableMovies_MovieTrailerViewControllerUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -855,7 +859,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -910,7 +914,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -925,15 +929,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEUDAN6YZ;
+				DEVELOPMENT_TEAM = GZK4ZKQ4UA;
 				INFOPLIST_FILE = IrresistableMovies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -943,15 +948,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEUDAN6YZ;
+				DEVELOPMENT_TEAM = GZK4ZKQ4UA;
 				INFOPLIST_FILE = IrresistableMovies/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMovies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -962,7 +968,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEUDAN6YZ;
+				DEVELOPMENT_TEAM = GZK4ZKQ4UA;
 				INFOPLIST_FILE = IrresistableMoviesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -971,7 +977,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrresistableMovies.app/IrresistableMovies";
 			};
@@ -983,7 +989,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2YEUDAN6YZ;
+				DEVELOPMENT_TEAM = GZK4ZKQ4UA;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = IrresistableMoviesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -992,7 +999,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMoviesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IrresistableMovies.app/IrresistableMovies";
 			};
@@ -1012,7 +1019,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMoviesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = IrresistableMovies;
 			};
@@ -1024,6 +1031,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZK4ZKQ4UA;
+				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = IrresistableMoviesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1032,7 +1040,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.binary.leaf.IrresistableMoviesUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = IrresistableMovies;
 			};

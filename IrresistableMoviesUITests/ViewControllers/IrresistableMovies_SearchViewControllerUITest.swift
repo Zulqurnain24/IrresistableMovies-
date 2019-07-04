@@ -23,30 +23,33 @@ class IrresistableMovies_SearchViewControllerUITest: XCTestCase {
         
         app.launchArguments.append("--uitesting")
         
+        //launch app
+        app.launch()
     }
     
     //test swipe On map
     func testTapOnSearchBar() {
-        //launch app
-        app.launch()
-        
+
+        XCTAssertTrue(self.app.exists)
         // Make sure we're displaying onboarding
-        XCTAssertTrue(app.exists)
-        let searchBar = app.otherElements.matching(identifier: "searchBar").element(boundBy: 0)
-        searchBar.tap()
-        
+        let app = XCUIApplication()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            app.tables.searchFields["Search"].tap()
+            app.searchFields["Search"].typeText("FlyBoys")
+            app.searchFields["Search"].buttons.firstMatch.tap()
+        }
+    
     }
     
     //test tap on right button
     func testTapOnUISegmentControl() {
-        //launch app
-        app.launch()
-        
+
         // Make sure we're displaying onboarding
         XCTAssertTrue(app.exists)
-        
-        let categorySegmentControl = app.otherElements.matching(identifier: "categorySegmentControl").element(boundBy: 0)
-        categorySegmentControl.tap()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            let categorySegmentControl = self.app.otherElements.matching(identifier: "categorySegmentControl").element(boundBy: 0)
+            categorySegmentControl.tap()
+        }
         
     }
     
@@ -54,28 +57,33 @@ class IrresistableMovies_SearchViewControllerUITest: XCTestCase {
     
     //test swipe On map
     func testSwipeOnSearchTableView() {
-        //launch app
-        app.launch()
-        
+
         // Make sure we're displaying onboarding
         XCTAssertTrue(app.exists)
-        let tableView = app.otherElements.matching(identifier: "SearchTableView").element(boundBy: 0)
-        tableView.swipeUp()
-        tableView.swipeUp()
-        tableView.swipeUp()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            let tableView = self.app.otherElements.matching(identifier: "SearchTableView").element(boundBy: 0)
+            tableView.swipeUp()
+            tableView.swipeUp()
+            tableView.swipeUp()
+        }
     }
     
     //test swipe On map
     func testTapOnMovieCell() {
-        //launch app
-        app.launch()
-        
+
         // Make sure we're displaying onboarding
         XCTAssertTrue(app.exists)
-
-        let tableViewCell = app.otherElements.matching(identifier: "MovieInfoCell").element(boundBy: 0)
-        tableViewCell.tap()
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            let tablesQuery = self.app.tables
+            
+            let cellQuery = tablesQuery.cells.containing(.staticText, identifier: "MovieInfoCell")
+            
+            let cell = cellQuery.children(matching: .staticText)
+            
+            let cellElement = cell.element
+            
+            cellElement.tap()
+        }
     }
     
 }
