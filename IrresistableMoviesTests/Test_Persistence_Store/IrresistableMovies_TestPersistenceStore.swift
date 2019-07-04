@@ -14,19 +14,13 @@ class IrresistableMovies_TestPersistenceStore: XCTestCase {
     
     func testPersistenceStore() {
         testNSUserDefaults()
-        testCoreDataStore()
     }
     
     func testNSUserDefaults() {
         PersistenceStore.shared.userDefaultSet(key: "Counter", value: 1)
         checkIntValue(PersistenceStore.shared.userDefaultGet(key: "Counter") as! Int, 1)
     }
-    
-    func testCoreDataStore() {
-        PersistenceStore.shared.save(catagory: Category.popularMovies, movieInfos: Stub.movies)
-        checkMovieInfoArray(Stub.movies, PersistenceStore.shared.fetchMovieInfos(catagory: Category.popularMovies))
-    }
-    
+
     // MARK: - private tests
     
     private func checkIntValue(_ value: Int,  _ actualVal: Int) {
@@ -36,8 +30,5 @@ class IrresistableMovies_TestPersistenceStore: XCTestCase {
     private func checkStringValue(_ value: UIImage,  _ actualVal: UIImage) {
         XCTAssertEqual(value, actualVal)
     }
-    
-    private func checkMovieInfoArray(_ value: [MovieInfo], _ actualValue: [MovieInfo]) {
-        XCTAssertEqual(value, actualValue)
-    }
+
 }

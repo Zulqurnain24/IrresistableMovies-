@@ -12,13 +12,13 @@ import XCTest
 
 class IrresistableMovies_TestLabelCell: XCTestCase {
     
-    let labelCell = Bundle.main.loadNibNamed("labelCell", owner: self, options: nil)?.last as! LabelCell
+    let labelCell = Bundle.main.loadNibNamed("LabelCell", owner: self, options: nil)?.last as! LabelCell
 
     func testLabelCell() {
         labelCell.awakeFromNib()
         labelCell.label.text = "Hello world"
         checkStringValue(labelCell.label.text!, "Hello world")
-        checkStringValue( labelCell.reuseIdentifier!, "LabelCell")
+        checkStringValue( LabelCell.reuseIdentifier, "LabelCell")
     }
     
     // MARK: - private tests

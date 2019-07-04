@@ -16,10 +16,10 @@ class IrresistableMovies_TestMovieInfoCellViewModel: XCTestCase {
     
     func testMovieInfoCellViewModel() {
         checkStringValue(movieInfoCellViewModel.imageUrl,  Stub.movies.first!.imageUrl)
-        checkStringValue(movieInfoCellViewModel.overView,  Stub.movies.first!.overView)
-        checkStringValue(movieInfoCellViewModel.popularity,  "\(Stub.movies.first!.popularity)")
+        checkStringValue(movieInfoCellViewModel.overView,  "Overview: \n" + Stub.movies.first!.overView)
+        checkStringValue(movieInfoCellViewModel.popularity,  "Popularity: \(Stub.movies.first!.popularity) %")
         checkStringValue(movieInfoCellViewModel.title,  Stub.movies.first!.title)
-        checkStringValue(movieInfoCellViewModel.votes,  "\(Stub.movies.first!.votes)")
+        checkStringValue(movieInfoCellViewModel.votes,  "Votes: \(Stub.movies.first!.votes)")
     }
     // MARK: - private tests
     

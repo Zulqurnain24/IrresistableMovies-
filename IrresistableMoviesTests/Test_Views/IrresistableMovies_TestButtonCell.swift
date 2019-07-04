@@ -16,9 +16,9 @@ class IrresistableMovies_TestButtonCell: XCTestCase {
     
     func testButtonCell() {
         buttonCell.awakeFromNib()
-        buttonCell.button.setTitle("Hello world", for: .normal)
-        checkStringValue((buttonCell.button.titleLabel?.text!)!, "Hello world")
-        checkStringValue( buttonCell.reuseIdentifier!, "ButtonCell")
+        buttonCell.button.setTitle("http://www.bowlingforcolumbine.com/index.php", for: .normal)
+        checkStringValue((buttonCell.button.titleLabel?.text!)!, "http://www.bowlingforcolumbine.com/index.php")
+        checkStringValue( ButtonCell.reuseIdentifier, "ButtonCell")
     }
     
     // MARK: - private tests

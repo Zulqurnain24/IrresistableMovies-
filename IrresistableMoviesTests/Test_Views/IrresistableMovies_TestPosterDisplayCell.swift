@@ -16,7 +16,7 @@ class IrresistableMovies_TestPosterDisplayCell: XCTestCase {
     
     func testPosterDisplayCell() {
         posterDisplayCell.awakeFromNib()
-        checkStringValue( posterDisplayCell.reuseIdentifier!, "PosterDisplayCell")
+        checkStringValue( PosterDisplayCell.reuseIdentifier, "PosterDisplayCell")
     }
     
     // MARK: - private tests

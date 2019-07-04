@@ -21,12 +21,12 @@ class IrresistableMovies_TestUtilityFunctions: XCTestCase {
     
     func testPerformPercentEncoding() {
         let percentEncodingValueTobeChecked = UtilityFunctions.shared.performPercentEncoding(originalString: "John Wick 3 * The ?")
-         checkStringValue(percentEncodingValueTobeChecked, "John+Wick+3+%2A+The+%3F")
+         checkStringValue(percentEncodingValueTobeChecked, "John%20Wick%203%20*%20The%20%3F")
     }
     
     func testGenerateIMDBMovieTrailerUrl() {
         let imdbUrlValueTobeTested = UtilityFunctions.shared.generateIMDBMovieTrailerUrl(movieId: "tt2011118")
-        checkStringValue(imdbUrlValueTobeTested, "http://m.imdb.com/title/tt2011118")
+        checkStringValue(imdbUrlValueTobeTested, "http://m.imdb.com/title/tt2011118/videogallery")
     }
     
     func testGenerateImageUrl() {
@@ -35,9 +35,9 @@ class IrresistableMovies_TestUtilityFunctions: XCTestCase {
     }
     
     func testFormateDate() {
-        let timestampLabelString = "2019-03-11T09:31:56Z"
+        let timestampLabelString = "2019-03-11"
         let value = UtilityFunctions.shared.formatDate(dateString: timestampLabelString)
-        checkStringValue(value, "Mar 11, 2019")
+        checkStringValue(value, "Jan 11, 2019")
     }
    
     // MARK: - private tests

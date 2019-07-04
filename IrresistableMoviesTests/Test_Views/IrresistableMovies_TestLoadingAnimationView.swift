@@ -21,7 +21,7 @@ class IrresistableMovies_TestLoadingAnimationView: XCTestCase {
             print("Animation is finished!")
         })
         checkIntValue(Int(loadingAnimationView.duration), Int(3.0))
-        checkIntValue(loadingAnimationView.reelImageView.animationImages!.count, 10)
+        checkIntValue(loadingAnimationView.animationImages!.count, 11)
     }
 
     // MARK: - private tests

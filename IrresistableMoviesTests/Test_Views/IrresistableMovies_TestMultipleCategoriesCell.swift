@@ -19,7 +19,7 @@ class IrresistableMovies_TestMultipleCategoriesCell: XCTestCase {
        multipleCategoriesCell.awakeFromNib()
        multipleCategoriesCell.label.text = "Hello world"
         checkStringValue(multipleCategoriesCell.label.text!, "Hello world")
-        checkStringValue( multipleCategoriesCell.reuseIdentifier!, "MultipleCategoriesCell")
+        checkStringValue( MultipleCategoriesCell.reuseIdentifier, "MultipleCategoriesCell")
     }
     
     // MARK: - private tests

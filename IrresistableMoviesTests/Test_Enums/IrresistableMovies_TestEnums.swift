@@ -15,7 +15,7 @@ class IrresistableMovies_TestEnums: XCTestCase {
     func testEnums() {
 
         checkIntValue(Height.poster.rawValue, 200)
-        checkIntValue(Height.detailView.rawValue, 500)
+        checkIntValue(Height.detailView.rawValue, 375)
         checkIntValue(Height.oneElement.rawValue, 50)
             
         checkIntValue(Height.zero.rawValue, 0)

@@ -17,7 +17,7 @@ class IrresistableMovies_TestHorizontalScrollingCell: XCTestCase {
     func testHorizontalScrollingCell() {
         horizontalScrollingCell.awakeFromNib()
         horizontalScrollingCell.categoryDatasource = ["Action", "Suspense", "Romance", "Comedy"]
-        checkStringValue( horizontalScrollingCell.reuseIdentifier!, "PosterDisplayCell")
+        checkStringValue( HorizontalScrollingCell.reuseIdentifier, "HorizontalScrollingCell")
         checkIntValue(horizontalScrollingCell.categoryDatasource.count, 4)
         checkStringValue(horizontalScrollingCell.categoryDatasource[0], "Action")
         checkStringValue(horizontalScrollingCell.categoryDatasource[1], "Suspense")
