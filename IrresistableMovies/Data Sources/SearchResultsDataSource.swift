@@ -60,7 +60,7 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
         switch self.selectedCategory {
         case .popularMovies:
             popularMovies.append(contentsOf: moviesArray)
-            
+            popularMovies = Array(Set<MovieInfo>(popularMovies))
             if !popularMovies.isEmpty {
                 //save movies datasource to the persistent store
                 PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: popularMovies, completionHandler)
@@ -68,7 +68,7 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
             return self
         case .topRatedMovies:
             topRatedMovies.append(contentsOf: moviesArray)
-            
+            topRatedMovies = Array(Set<MovieInfo>(topRatedMovies))
             if !topRatedMovies.isEmpty {
                 //save movies datasource to the persistent store
                 PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: topRatedMovies, completionHandler)
@@ -76,27 +76,20 @@ class SearchResultsDataSource: NSObject, UITableViewDataSource {
             return self
         case .upcomingMovies:
             upcomingMovies.append(contentsOf: moviesArray)
-            
+            upcomingMovies = Array(Set<MovieInfo>(upcomingMovies))
              if !upcomingMovies.isEmpty {
                 //save movies datasource to the persistent store
                 PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: upcomingMovies, completionHandler)
             }
             return self
         case .searchedMovies:
-
             if completionHandler != nil {
                 completionHandler!()
             }
             
             searchedMovies.append(contentsOf: moviesArray)
-            
-            guard reachability.connection != .unavailable else {
-                return self}
-            
-             if !upcomingMovies.isEmpty {
-                //save movies datasource to the persistent store
-                PersistenceStore.shared.save(catagory: selectedCategory, movieInfos: upcomingMovies, completionHandler)
-            }
+            searchedMovies = Array(Set<MovieInfo>(searchedMovies))
+
             return self
         }
     }

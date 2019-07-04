@@ -11,10 +11,11 @@ import UIKit
 class MovieDetailTableViewController: UITableViewController {
 
     lazy var dataSource: MovieDetailInfo! = nil
+    let networkErrorAlertView = Bundle.main.loadNibNamed("NetworkErrorAlertView", owner: self, options: nil)?.last as! NetworkErrorAlertView
     
     lazy var movieInfoDetailCellViewModel: MovieInfoDetailCellViewModel! = nil
     let client = IrresistableMoviesAPIClient()
-    
+    var reachability = try! Reachability()
     var movieId: Int!
     
     override func viewDidLoad() {
@@ -31,6 +32,15 @@ class MovieDetailTableViewController: UITableViewController {
         fetchMovieDetail()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        guard !reachability.notifierRunning else { return }
+        do {
+            try reachability.startNotifier()
+        } catch let error {
+            print("error: \(error.localizedDescription)")
+        }
+    }
+    
     func fetchMovieDetail() {
         guard let movieIdValue = movieId as Int? else { return }
         client.fetchMovieDetails(movieId: "\(movieIdValue)") { movies, error in
@@ -50,7 +60,21 @@ class MovieDetailTableViewController: UITableViewController {
             destinationVC.trailerURLString = urlString
         }
     }
-
+    
+    //for displaying alertview
+    func showAlert() {
+        let windows = UIApplication.shared.windows
+        let lastWindow = windows.last
+        networkErrorAlertView.frame = CGRect(origin: CGPoint(x: UIScreen.main.bounds.size.width/8, y: UIScreen.main.bounds.size.height/8), size: CGSize(width: 0.8 * UIScreen.main.bounds.size.width, height:  0.5 * UIScreen.main.bounds.size.height))
+        networkErrorAlertView.buttonCallback = {
+            self.removeAlert()
+        }
+        lastWindow?.addSubview(networkErrorAlertView)
+    }
+    
+    func removeAlert() {
+        networkErrorAlertView.removeFromSuperview()
+    }
 }
 
 extension MovieDetailTableViewController {
@@ -124,7 +148,9 @@ extension MovieDetailTableViewController {
             buttonCell.setNeedsDisplay()
             buttonCell.buttonCallback = {
                 DispatchQueue.main.async {
-                    guard let url = URL(string: self.movieInfoDetailCellViewModel.homePage) else { return }
+                    guard let url = URL(string: self.movieInfoDetailCellViewModel.homePage), self.reachability.connection != .unavailable else {
+                        self.showAlert()
+                        return }
                     UIApplication.shared.open(url)
                 }
             }
@@ -138,6 +164,10 @@ extension MovieDetailTableViewController {
             buttonCell.setNeedsDisplay()
             buttonCell.buttonCallback = {
                 DispatchQueue.main.async {
+                    guard self.reachability.connection != .unavailable else {
+                        self.showAlert()
+                        return
+                    }
                     self.performSegue(withIdentifier: Route.segueToTrailerDetailController.rawValue, sender: self)
                 }
             }

@@ -15,7 +15,7 @@ class SearchTableViewController: UIViewController {
     
     //load respective views from nibs
     let loadingAnimationView = Bundle.main.loadNibNamed("LoadingAnimationView", owner: self, options: nil)?.last as! LoadingAnimationView
-    let alert = Bundle.main.loadNibNamed("NetworkErrorAlertView", owner: self, options: nil)?.last as! NetworkErrorAlertView
+    let networkErrorAlertView = Bundle.main.loadNibNamed("NetworkErrorAlertView", owner: self, options: nil)?.last as! NetworkErrorAlertView
     
     let searchController = UISearchController(searchResultsController: nil)
     var dataSource = SearchResultsDataSource()
@@ -49,6 +49,15 @@ class SearchTableViewController: UIViewController {
         setupView()
 
         fetchResultForCategory()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        guard !reachability.notifierRunning else { return }
+        do {
+            try reachability.startNotifier()
+        } catch let error {
+            print("error: \(error.localizedDescription)")
+        }
     }
     
     func updateCoreDataRecords(_ completionHandler: (() -> Void)? = nil) {
@@ -190,15 +199,15 @@ class SearchTableViewController: UIViewController {
     func showAlert() {
         let windows = UIApplication.shared.windows
         let lastWindow = windows.last
-        alert.frame = CGRect(origin: CGPoint(x: UIScreen.main.bounds.size.width/8, y: UIScreen.main.bounds.size.height/8), size: CGSize(width: 0.8 * UIScreen.main.bounds.size.width, height:  0.5 * UIScreen.main.bounds.size.height))
-        alert.buttonCallback = {
+        networkErrorAlertView.frame = CGRect(origin: CGPoint(x: UIScreen.main.bounds.size.width/8, y: UIScreen.main.bounds.size.height/8), size: CGSize(width: 0.8 * UIScreen.main.bounds.size.width, height:  0.5 * UIScreen.main.bounds.size.height))
+        networkErrorAlertView.buttonCallback = {
             self.removeAlert()
         }
-        lastWindow?.addSubview(alert)
+        lastWindow?.addSubview(networkErrorAlertView)
     }
     
     func removeAlert() {
-        alert.removeFromSuperview()
+        networkErrorAlertView.removeFromSuperview()
     }
 }
 
